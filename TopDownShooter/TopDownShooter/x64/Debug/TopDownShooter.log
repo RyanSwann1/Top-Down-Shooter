@@ -1,0 +1,17 @@
+﻿  SystemDrawable.cpp
+u:\github projects\top down shooter\topdownshooter\topdownshooter\src\systems\systemdrawable.cpp(40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  TileSheetManager.cpp
+  LevelManager.cpp
+u:\github projects\top down shooter\topdownshooter\topdownshooter\src\managers\levelmanager.cpp(141): error C2653: 'TileSheetManagerLocator': is not a class or namespace name
+u:\github projects\top down shooter\topdownshooter\topdownshooter\src\managers\levelmanager.cpp(141): error C3861: 'getTileSheetManager': identifier not found
+u:\github projects\top down shooter\topdownshooter\topdownshooter\src\managers\levelmanager.cpp(142): error C2228: left of '.hasTileSheet' must have class/struct/union
+  u:\github projects\top down shooter\topdownshooter\topdownshooter\src\managers\levelmanager.cpp(142): note: type is 'unknown-type'
+u:\github projects\top down shooter\topdownshooter\topdownshooter\src\managers\levelmanager.cpp(158): error C2228: left of '.addTileSheet' must have class/struct/union
+  u:\github projects\top down shooter\topdownshooter\topdownshooter\src\managers\levelmanager.cpp(158): note: type is 'unknown-type'
+u:\github projects\top down shooter\topdownshooter\topdownshooter\src\managers\levelmanager.cpp(158): error C3861: 'TileSheet': identifier not found
+u:\github projects\top down shooter\topdownshooter\topdownshooter\src\managers\levelmanager.cpp(184): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+u:\github projects\top down shooter\topdownshooter\topdownshooter\src\managers\levelmanager.cpp(184): error C2664: 'void EntityManager::addEntity(const sf::Vector2f &,std::string &&)': cannot convert argument 1 from 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' to 'const sf::Vector2f &'
+  u:\github projects\top down shooter\topdownshooter\topdownshooter\src\managers\levelmanager.cpp(184): note: Reason: cannot convert from 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' to 'const sf::Vector2f'
+  u:\github projects\top down shooter\topdownshooter\topdownshooter\src\managers\levelmanager.cpp(184): note: No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+u:\github projects\top down shooter\topdownshooter\topdownshooter\src\managers\levelmanager.cpp(217): error C2065: 'entityManager': undeclared identifier
+  Generating Code...

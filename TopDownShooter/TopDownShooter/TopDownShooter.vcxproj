@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{A3F227B8-8AE0-498B-BF10-E9FECC31170E}</ProjectGuid>
+    <RootNamespace>TopDownShooter</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>U:\Github Projects\Top Down Shooter\TopDownShooter\TopDownShooter\src;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>U:\SFML\SFML-2.4.2-windows-vc14-64-bit\SFML-2.4.2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>U:\SFML\SFML-2.4.2-windows-vc14-64-bit\SFML-2.4.2\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>TIXML_USE_STL;sfml-window-d.lib;sfml-graphics-d.lib;sfml-system-d.lib;winmm.lib;opengl32.lib;freetype.lib;jpeg.lib;vorbis.lib;vorbisenc.lib;vorbisfile.lib;openal32.lib;sfml-audio-d.lib;flac.lib;ogg.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Game.cpp" />
+    <ClCompile Include="src\Game\GlobalMessenger.cpp" />
+    <ClCompile Include="src\Tile\TileLayer.cpp" />
+    <ClCompile Include="src\Tile\TileSheet.cpp" />
+    <ClCompile Include="src\Locators\EntityManagerLocator.cpp" />
+    <ClCompile Include="src\Locators\EventManagerLocator.cpp" />
+    <ClCompile Include="src\Locators\GlobalMessengerLocator.cpp" />
+    <ClCompile Include="src\Locators\StateManagerLocator.cpp" />
+    <ClCompile Include="src\Locators\StringToEnumConverterLocator.cpp" />
+    <ClCompile Include="src\Locators\WindowLocator.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Managers\EntityManager.cpp" />
+    <ClCompile Include="src\Managers\EventManager.cpp" />
+    <ClCompile Include="src\Managers\LevelManager.cpp" />
+    <ClCompile Include="src\Managers\StateManager.cpp" />
+    <ClCompile Include="src\Managers\SystemManager.cpp" />
+    <ClCompile Include="src\Managers\TileSheetManager.cpp" />
+    <ClCompile Include="src\States\StateGame.cpp" />
+    <ClCompile Include="src\Systems\SystemBase.cpp" />
+    <ClCompile Include="src\Systems\SystemDrawable.cpp" />
+    <ClCompile Include="src\Systems\SystemMovable.cpp" />
+    <ClCompile Include="src\Systems\SystemPlayerController.cpp" />
+    <ClCompile Include="src\Utilities\Base64.cpp" />
+    <ClCompile Include="src\Utilities\EntityInitializer.cpp" />
+    <ClCompile Include="src\Utilities\StringToEnumConverter.cpp" />
+    <ClCompile Include="src\Utilities\tinyxml.cpp" />
+    <ClCompile Include="src\Utilities\tinyxmlerror.cpp" />
+    <ClCompile Include="src\Utilities\tinyxmlparser.cpp" />
+    <ClCompile Include="src\Window.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Components\ComponentBase.h" />
+    <ClInclude Include="src\Components\ComponentDrawable.h" />
+    <ClInclude Include="src\Components\ComponentMovable.h" />
+    <ClInclude Include="src\Components\ComponentPosition.h" />
+    <ClInclude Include="src\Components\ComponentRotation.h" />
+    <ClInclude Include="src\Components\ComponentType.h" />
+    <ClInclude Include="src\Entities\Entity.h" />
+    <ClInclude Include="src\Entities\EntityName.h" />
+    <ClInclude Include="src\Entities\EntityTag.h" />
+    <ClInclude Include="src\Game\Direction.h" />
+    <ClInclude Include="src\Game\GlobalMessage.h" />
+    <ClInclude Include="src\Game\GlobalMessenger.h" />
+    <ClInclude Include="src\Input\InputEvent.h" />
+    <ClInclude Include="src\Input\KeyCode.h" />
+    <ClInclude Include="src\Tile\TileLayer.h" />
+    <ClInclude Include="src\Tile\TileSheet.h" />
+    <ClInclude Include="src\Locators\EntityManagerLocator.h" />
+    <ClInclude Include="src\Locators\EventManagerLocator.h" />
+    <ClInclude Include="src\Locators\GlobalMessengerLocator.h" />
+    <ClInclude Include="src\Locators\StateManagerLocator.h" />
+    <ClInclude Include="src\Locators\StringToEnumConverterLocator.h" />
+    <ClInclude Include="src\Locators\WindowLocator.h" />
+    <ClInclude Include="src\Managers\EntityManager.h" />
+    <ClInclude Include="src\Game.h" />
+    <ClInclude Include="src\Managers\EventManager.h" />
+    <ClInclude Include="src\Managers\LevelManager.h" />
+    <ClInclude Include="src\Managers\ResourceManager.h" />
+    <ClInclude Include="src\Managers\StateManager.h" />
+    <ClInclude Include="src\Managers\SystemManager.h" />
+    <ClInclude Include="src\Managers\TextureManager.h" />
+    <ClInclude Include="src\Managers\TileSheetManager.h" />
+    <ClInclude Include="src\States\StateBase.h" />
+    <ClInclude Include="src\States\StateGame.h" />
+    <ClInclude Include="src\States\StateType.h" />
+    <ClInclude Include="src\Systems\SystemBase.h" />
+    <ClInclude Include="src\Systems\SystemDrawable.h" />
+    <ClInclude Include="src\Systems\SystemEvent.h" />
+    <ClInclude Include="src\Systems\SystemMessageBase.h" />
+    <ClInclude Include="src\Systems\SystemMessagePosition.h" />
+    <ClInclude Include="src\Systems\SystemMessageType.h" />
+    <ClInclude Include="src\Systems\SystemMovable.h" />
+    <ClInclude Include="src\Systems\SystemPlayerController.h" />
+    <ClInclude Include="src\Systems\SystemType.h" />
+    <ClInclude Include="src\Utilities\Base64.h" />
+    <ClInclude Include="src\Utilities\EntityInitializer.h" />
+    <ClInclude Include="src\Utilities\StringToEnumConverter.h" />
+    <ClInclude Include="src\Utilities\tinystr.h" />
+    <ClInclude Include="src\Utilities\tinyxml.h" />
+    <ClInclude Include="src\Window.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
