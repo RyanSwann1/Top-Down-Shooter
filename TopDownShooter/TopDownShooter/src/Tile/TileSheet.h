@@ -14,7 +14,6 @@ public:
 
 	sf::IntRect getTileLocation(int tileID) const;
 	const sf::Texture& getTexture() const;
-	void releaseTileSheet() const;
 
 	const std::string m_name;
 	const int m_tileSize;

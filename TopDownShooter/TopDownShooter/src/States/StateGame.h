@@ -3,8 +3,7 @@
 #include <States\StateBase.h>
 #include <Managers\SystemManager.h>
 #include <Managers\EntityManager.h>
-#include <Managers\ResourceManager.h>
-#include <Tile\TileSheet.h>
+#include <Managers\TileSheetManager.h>
 
 class StateGame : public StateBase
 {
@@ -21,5 +20,5 @@ public:
 private:
 	EntityManager m_entityManager;
 	SystemManager m_systemManager;
-	ResourceManager<TileSheet> m_tileSheetManager;
+	TileSheetManager m_tileSheetManager;
 };

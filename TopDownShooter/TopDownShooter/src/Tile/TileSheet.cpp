@@ -1,4 +1,4 @@
-#include <Level\TileSheet.h>
+#include <Tile\TileSheet.h>
 
 TileSheet::TileSheet(std::string&& tileSheetName, int tileSize, int columns, int rows, int firstGID, int margin, int spacing)
 	: m_name(std::move(tileSheetName)),
@@ -43,16 +43,9 @@ sf::IntRect TileSheet::getTileLocation(int tileID) const
 		m_tileSize, m_tileSize);
 }
 
-
 const sf::Texture & TileSheet::getTexture() const
 {
 	return TextureManagerLocator::getTextureManager().getResource(m_name);
-}
-
-void TileSheet::releaseTileSheet() const
-{
-	auto& textureManager = TextureManagerLocator::getTextureManager();
-	textureManager.releaseResource(m_name);
 }
 
 sf::Texture TileSheet::getResourceFromFile(const std::string & fileLocation)

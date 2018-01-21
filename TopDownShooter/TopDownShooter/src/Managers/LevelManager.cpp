@@ -1,10 +1,12 @@
 #include <Managers\LevelManager.h>
 #include <Managers\EntityManager.h>
-#include <Level\TileLayer.h>
+#include <Tile\TileLayer.h>
 #define TIXML_USE_STL
 #include <Utilities\tinyxml.h>
 #include <Utilities\Base64.h>
 #include <Locators\EntityManagerLocator.h>
+#include <Locators\TileSheetManagerLocator.h>
+#include <Managers\TileSheetManager.h>
 
 //Tile
 LevelManager::Tile::Tile(const sf::Vector2f & position)
@@ -137,14 +139,6 @@ void parseTileSheets(const TiXmlElement & rootElement)
 			continue;
 		}
 
-		int tileSheetFirstGID = 0;
-		tileSheetElement->Attribute("firstgid", &tileSheetFirstGID);
-		auto& tileSheetManager = TileSheetManagerLocator::getTileSheetManager();
-		if (tileSheetManager.hasTileSheet(tileSheetFirstGID))
-		{
-			continue;
-		}
-
 		std::string tileSheetName = tileSheetElement->Attribute("name");
 		sf::Vector2i tileSetSize;
 		int spacing = 0, margin = 0, tileSize = 0, firstGID = 0;
@@ -156,7 +150,9 @@ void parseTileSheets(const TiXmlElement & rootElement)
 		tileSheetElement->Attribute("margin", &margin);
 		const int columns = tileSetSize.x / (tileSize + spacing);
 		const int rows = tileSetSize.y / (tileSize + spacing);
-		tileSheetManager.addTileSheet(tileSheetFirstGID, TileSheet(std::move(tileSheetName), tileSize, columns, rows, firstGID, margin, spacing));
+
+		auto& tileSheetManager = TileSheetManagerLocator::get();
+		tileSheetManager.addTileSheet(TileSheet(std::move(tileSheetName), tileSize, columns, rows, firstGID, margin, spacing));
 	}
 }
 

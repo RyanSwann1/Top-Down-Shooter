@@ -1,10 +1,12 @@
 #include <States\StateGame.h>
+#include <Locators\TileSheetManagerLocator.h>
 #include <iostream>
 
 StateGame::StateGame(StateManager& stateManager, StateType type)
 	: StateBase(stateManager, type),
+	m_entityManager(),
 	m_systemManager(),
-	m_entityManager()
+	m_tileSheetManager()
 {
 	std::cout << "Entered State\n";
 	m_entityManager.addEntity(sf::Vector2f(128, 128), "Player");

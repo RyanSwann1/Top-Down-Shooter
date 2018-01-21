@@ -28,11 +28,17 @@ public:
 		m_resources.emplace(std::move(resourceName), resource);
 	}
 
-	const Resource& getResource(const std::string& name)
+	const Resource& getResource(const std::string& name) const
 	{
 		auto iter = m_resources.find(name);
 		assert(iter != m_resources.cend());
 		return iter->second();
+	}
+
+	bool hasResource(const std::string& name) const
+	{
+		auto iter = m_resources.find(name);
+		return (iter != m_resources.cend() ? true : false);
 	}
 
 	void removeResource(const std::string& name)

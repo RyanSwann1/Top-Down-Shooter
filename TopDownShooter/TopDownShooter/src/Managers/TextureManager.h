@@ -6,12 +6,9 @@
 class TextureManager : private ResourceManager<sf::Texture>
 {
 public:
-	TextureManager() {}
+	TextureManager();
 	TextureManager(const TextureManager&) = delete;
 	TextureManager& operator=(const TextureManager&) = delete;
 	TextureManager(TextureManager&&) = delete;
 	TextureManager&& operator=(TextureManager&&) = delete;
-
-private:
-
 };
