@@ -3,7 +3,7 @@
 #include <SFML\Graphics.hpp>
 #include <Managers\ResourceManager.h>
 
-class TextureManager : private ResourceManager<sf::Texture>
+class TextureManager : public ResourceManager<sf::Texture>
 {
 public:
 	TextureManager();

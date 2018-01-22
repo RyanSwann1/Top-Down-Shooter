@@ -32,7 +32,7 @@ public:
 	{
 		auto iter = m_resources.find(name);
 		assert(iter != m_resources.cend());
-		return iter->second();
+		return *iter->second.get();
 	}
 
 	bool hasResource(const std::string& name) const
@@ -52,6 +52,12 @@ public:
 	{
 		assert(m_filePaths.find(name) == m_filePaths.cend());
 		m_filePaths.emplace(std::move(name), std::move(location));
+	}
+
+protected:
+	void removeAllResources()
+	{
+		m_resources.clear();
 	}
 
 private:

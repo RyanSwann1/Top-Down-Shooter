@@ -13,11 +13,11 @@ const TileSheet & TileSheetManager::getTileSheet(const std::string & tileSheetNa
 	return cIter->second;
 }
 
-void TileSheetManager::addTileSheet(const TileSheet & tileSheet)
+void TileSheetManager::addTileSheet(const TileSheet& tileSheet)
 {
 	assert(hasTileSheet(tileSheet.m_name));
-
-	m_tileSheets.emplace(tileSheet.m_firstGID, tileSheet);
+	//std::unordered_map<std::string, TileSheet> m_tileSheets;
+	m_tileSheets.emplace(tileSheet.m_name, tileSheet);
 }
 
 bool TileSheetManager::hasTileSheet(const std::string & tileSheetName) const

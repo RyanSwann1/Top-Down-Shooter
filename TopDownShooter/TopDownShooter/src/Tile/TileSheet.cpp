@@ -1,4 +1,6 @@
 #include <Tile\TileSheet.h>
+#include <Locators\TextureManagerLocator.h>
+#include <Managers\TextureManager.h>
 
 TileSheet::TileSheet(std::string&& tileSheetName, int tileSize, int columns, int rows, int firstGID, int margin, int spacing)
 	: m_name(std::move(tileSheetName)),
@@ -7,8 +9,7 @@ TileSheet::TileSheet(std::string&& tileSheetName, int tileSize, int columns, int
 	m_rows(rows),
 	m_firstGID(firstGID),
 	m_margin(margin),
-	m_spacing(spacing),
-	m_tileSheet()
+	m_spacing(spacing)
 {}
 
 sf::IntRect TileSheet::getTileLocation(int tileID) const
@@ -17,7 +18,6 @@ sf::IntRect TileSheet::getTileLocation(int tileID) const
 	const int column = tileID % m_columns;
 
 	//Kept here for profiling 
-
 	////Scan through every tile on tilesheet to find appropriate tile by ID
 	//int column = 0, row = 0;
 	//const int lastTileID = m_columns * m_rows;
@@ -45,10 +45,5 @@ sf::IntRect TileSheet::getTileLocation(int tileID) const
 
 const sf::Texture & TileSheet::getTexture() const
 {
-	return TextureManagerLocator::getTextureManager().getResource(m_name);
-}
-
-sf::Texture TileSheet::getResourceFromFile(const std::string & fileLocation)
-{
-	return sf::Texture();
+	return TextureManagerLocator::get().getResource(m_name);
 }

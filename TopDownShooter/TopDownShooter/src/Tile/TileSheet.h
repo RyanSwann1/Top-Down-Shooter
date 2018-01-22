@@ -7,10 +7,6 @@ class TileSheet
 {
 public:
 	TileSheet(std::string&& tileSheetName, int tileSize, int columns, int rows, int firstGID, int margin, int spacing);
-	TileSheet(const TileSheet&) = delete;
-	TileSheet& operator=(const TileSheet&) = delete;
-	TileSheet(TileSheet&&) = delete;
-	TileSheet&& operator=(TileSheet&&) = delete;
 
 	sf::IntRect getTileLocation(int tileID) const;
 	const sf::Texture& getTexture() const;
@@ -22,7 +18,4 @@ public:
 	const int m_firstGID;
 	const int m_margin;
 	const int m_spacing;
-
-private:
-	sf::Texture m_tileSheet;
 };

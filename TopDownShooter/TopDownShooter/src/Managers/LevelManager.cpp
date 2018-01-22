@@ -61,14 +61,15 @@ void parseEntities(const TiXmlElement& rootElement, EntityManager& entityManager
 std::vector<TileLayer> parseTileLayers(const TiXmlElement & rootElement, const sf::Vector2i & levelSize)
 {
 	std::vector<TileLayer> tileLayers;
-	for (const auto* tileLayerElement = rootElement.FirstChildElement(); tileLayerElement != nullptr; tileLayerElement = tileLayerElement->NextSiblingElement())
+	for (const auto* tileLayerElement = rootElement.FirstChildElement(); 
+		tileLayerElement != nullptr; tileLayerElement = tileLayerElement->NextSiblingElement())
 	{
 		if (tileLayerElement->Value() != std::string("layer"))
 		{
 			continue;
 		}
 
-		auto tileMap = decodeTileLayer(*tileLayerElement, levelSize);
+		std::vector<std::vector<int>> tileMap = decodeTileLayer(*tileLayerElement, levelSize);
 		tileLayers.emplace_back(std::move(tileMap), levelSize);
 	}
 
@@ -213,7 +214,7 @@ std::unique_ptr<LevelManager::Level> LevelManager::parseLevel(const std::string 
 	parseTileSheets(*rootElement);
 	parseEntities(*rootElement, EntityManagerLocator::get(), levelDetails.m_tileSize);
 
-	return std::make_unique<Level>(std::move(parseTileLayers(*rootElement, levelDetails.m_levelSize)),
+	return std::make_unique<Level>(levelName, std::move(parseTileLayers(*rootElement, levelDetails.m_levelSize)),
 		levelName, levelDetails.m_levelSize, levelDetails.m_tileSize);
 }
 
